@@ -7,7 +7,6 @@ class Bus:
         self.destination = destination
         self.passengers = []
 
-        
 
     # Method that emulates the driving action .
     def drive(self):
@@ -29,7 +28,10 @@ class Bus:
     def empty(self):
         self.passengers.clear()
 
-
-
+    # Method that picks up each person in the bus stop queue and then clears the queue. 
+    def pick_up_from_stop(self, bus_stop):
+        for person in bus_stop.queue:
+            self.passengers.append(person)
+        bus_stop.clear()
     
 
